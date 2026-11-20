@@ -70,9 +70,12 @@ VerticalSlice/
 │           │   ├── CreateAdmissionValidator.cs
 │           │   └── CreateAdmissionResponse.cs
 │           └── GetAdmissionById/
-│               ├── GetAdmissionByIdQuery.cs
-│               ├── GetAdmissionByIdQueryHandler.cs
-│               └── GetAdmissionByIdResponse.cs
+│           │   ├── GetAdmissionByIdQuery.cs
+│           │   ├── GetAdmissionByIdQueryHandler.cs
+│           │   └── GetAdmissionByIdResponse.cs
+│           └── GetAllAdmissions/
+│               ├── GetAllAdmissionsQuery.cs
+│               └── GetAllAdmissionsQueryHandler.cs
 ├── Infrastructure/                  # EF Core, Persistence
 │   └── Persistence/
 │       └── AppDbContext.cs         # EF Core context
@@ -131,7 +134,8 @@ VerticalSlice/
 ### Students
 
 | Method | Endpoint             | Description          | Request Body                                  |
-| ------ | -------------------- | -------------------- | --------------------------------------------- |
+| ------ | -------------------- | -------------------- | --------------------------------------------- |\
+| GET    | `/api/students`      | Get all student      | —                                             |
 | POST   | `/api/students`      | Create a new student | `{ firstName, lastName, email, dateOfBirth }` |
 | GET    | `/api/students/{id}` | Get student by ID    | —                                             |
 
@@ -139,6 +143,7 @@ VerticalSlice/
 
 | Method | Endpoint            | Description         | Request Body               |
 | ------ | ------------------- | ------------------- | -------------------------- |
+| GET    | `/api/courses`      | Get all course      | —                          |
 | POST   | `/api/courses`      | Create a new course | `{ title, code, credits }` |
 | GET    | `/api/courses/{id}` | Get course by ID    | —                          |
 
